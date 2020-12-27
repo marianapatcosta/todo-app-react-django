@@ -12,6 +12,7 @@ __pycache__
 db.sqlite3
 media
 Lib
+/backend/backend/.env
 
 # Backup files # 
 *.bak 
