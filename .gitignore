@@ -20,5 +20,6 @@ Lib
 *.env
 build
 dist
+
 # Backup files # 
 *.bak 
