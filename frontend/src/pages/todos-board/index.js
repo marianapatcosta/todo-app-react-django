@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useCallback, useContext, useEffect, useRef, useState } from "react";
 import { Todo, TodoPlaceholder } from "../../components";
 import {
   statuses,
@@ -38,11 +38,8 @@ const TodosBoard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const todosBoardRef = useRef();
 
-  useEffect(() => {
-    fetchTodos();
-  }, []);
 
-  const fetchTodos = async () => {
+  const fetchTodos = useCallback(async () => {
     setIsLoading(true);
     try {
       const response = await fetch(
@@ -69,7 +66,11 @@ const TodosBoard = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [authToken]);
+
+  useEffect(() => {
+    fetchTodos();
+  }, [fetchTodos]);
 
   const onEditTodo = async (
     newTodoStatus,

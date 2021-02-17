@@ -41,7 +41,7 @@ const Todo = ({
 
   useEffect(() => {
     isDragging && todoRef.current.focus();
-  }, []);
+  }, [isDragging]);
 
   return (
     <StyledTodo

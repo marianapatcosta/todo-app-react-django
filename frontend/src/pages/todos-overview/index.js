@@ -91,7 +91,7 @@ const TodosOverview = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [order, orderBy, search]);
+  }, [authToken, order, orderBy, search]);
 
   useEffect(() => {
     fetchTodos();

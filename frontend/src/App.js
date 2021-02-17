@@ -1,6 +1,6 @@
 import React, { Suspense, useCallback, useEffect, useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { Header } from "./components";
+import { Header, LoadingSpinner } from "./components";
 import { Authentication, Home, Todos } from "./pages/";
 import lightTheme from "./themes/light";
 import darkTheme from "./themes/dark";
@@ -19,23 +19,6 @@ const App = () => {
   const [userId, setUserId] = useState(null);
   const [username, setUsername] = useState(null);
   const [isLoggingOut, setIsLoggingOut] = useState(false);
-
-  useEffect(() => {
-    const darkTheme = localStorage.getItem("darkTheme");
-    const storedUserData = JSON.parse(localStorage.getItem("userData"));
-    darkTheme && setDarkTheme(JSON.parse(darkTheme));
-    storedUserData &&
-      storedUserData.authToken &&
-      login(
-        storedUserData.userId,
-        storedUserData.authToken,
-        storedUserData.username
-      );
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem("darkTheme", isDarkTheme);
-  }, [isDarkTheme]);
 
   const login = useCallback((userId, authToken, username) => {
     setAuthToken(authToken);
@@ -57,6 +40,23 @@ const App = () => {
     setUserId(null);
     localStorage.removeItem("userData");
   }, []);
+
+  useEffect(() => {
+    const darkTheme = localStorage.getItem("darkTheme");
+    const storedUserData = JSON.parse(localStorage.getItem("userData"));
+    darkTheme && setDarkTheme(JSON.parse(darkTheme));
+    storedUserData &&
+      storedUserData.authToken &&
+      login(
+        storedUserData.userId,
+        storedUserData.authToken,
+        storedUserData.username
+      );
+  }, [login]);
+
+  useEffect(() => {
+    localStorage.setItem("darkTheme", isDarkTheme);
+  }, [isDarkTheme]);
 
   const routes = authToken ? (
     <Switch>
@@ -101,7 +101,7 @@ const App = () => {
               toggleThemeMode={(event) => setDarkTheme(event.target.checked)}
             />
             <main className="app__page-content">
-              <Suspense fallback={""}>{routes}</Suspense>
+              <Suspense fallback={<LoadingSpinner />}>{routes}</Suspense>
             </main>
           </StyledApp>
         </ThemeProvider>

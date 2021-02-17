@@ -1,7 +1,6 @@
 import React from "react";
 import { TodosBoard, TodosOverview } from "..";
 import { Tabs } from "../../components";
-import {} from "./StyledTodos";
 
 const Todos = () => {
   const tabsMetadata = [

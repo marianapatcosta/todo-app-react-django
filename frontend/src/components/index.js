@@ -10,6 +10,7 @@ import Emoji from "./emoji";
 import Export from "./export";
 import Header from "./header";
 import Input from "./input";
+import LoadingSpinner from "./loading-spinner";
 import Modal from "./modal";
 import Search from "./search";
 import Textarea from "./textarea";
@@ -33,6 +34,7 @@ export {
   Export,
   Header,
   Input,
+  LoadingSpinner,
   Modal,
   Search,
   Tab,
