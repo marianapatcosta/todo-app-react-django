@@ -24,8 +24,8 @@ const Modal = ({
   const modalRef = useRef();
 
   useEffect(() => {
-    const buttonIndex = modalRef.current.children[1].children.length - 1;
-    const modalFocusButton = modalRef.current.children[1].children[buttonIndex];
+    const buttonIndex = modalRef.current.children[2].children.length - 1;
+    const modalFocusButton = modalRef.current.children[2].children[buttonIndex];
     modalFocusButton.focus();
 
     const handleClickOutside = (event) => {

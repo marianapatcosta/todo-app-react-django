@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 export const StyledInputWrapper = styled.div`
   margin: 1rem 0;
-  position: relative;
   width: 100%;
+`;
+
+export const StyledInputField = styled.div`
+  position: relative;
 `;
 
 export const StyledInput = styled.input`
@@ -46,7 +49,9 @@ export const StyledInputIcon = styled.img`
   position: absolute;
   width: 1rem;
   height: 1rem;
-  top: 58%;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   right: 5%;
   filter: invert(23%) sepia(43%) saturate(3232%) hue-rotate(100deg)
     brightness(92%) contrast(104%);

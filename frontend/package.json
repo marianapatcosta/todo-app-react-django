@@ -25,17 +25,17 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "react-build": "react-scripts build",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "test-coverage": "react-scripts test -- --coverage",
     "eject": "react-scripts eject",
     "start-electron": "electron .",
     "electron-dev": "concurrently \"yarn start\" \"wait-on http://localhost:3000 && electron .\"",
     "release": "npm run react-build && electron-builder --publish=always",
-    "build": "npm run react-build && electron-builder -mwl",
-    "build-win": "npm run react-build && electron-builder --win",
-    "build-mac": "npm run react-build && electron-builder --mac",
-    "build-linux": "npm run react-build && electron-builder --linux"
+    "electron-build": "npm run react-build && electron-builder -mwl",
+    "electron-build-win": "npm run react-build && electron-builder --win",
+    "electron-build-mac": "npm run react-build && electron-builder --mac",
+    "electron-build-linux": "npm run react-build && electron-builder --linux"
   },
   "eslintConfig": {
     "extends": "react-app"

@@ -12,6 +12,7 @@ import {
 } from "react-router-dom";
 import { StyledApp, StyledAppSpacer, GlobalStyle } from "./StyledApp";
 import { AuthContext } from "./context/auth-context";
+import { isEventValid } from "./utils/utils";
 
 const App = () => {
   const [isDarkTheme, setDarkTheme] = useState(false);
@@ -34,11 +35,13 @@ const App = () => {
     );
   }, []);
 
-  const logout = useCallback(() => {
-    setIsLoggingOut(true);
-    setAuthToken(null);
-    setUserId(null);
-    localStorage.removeItem("userData");
+  const logout = useCallback((event) => {
+    if (isEventValid(event)) {
+      setIsLoggingOut(true);
+      setAuthToken(null);
+      setUserId(null);
+      localStorage.removeItem("userData");
+    }
   }, []);
 
   useEffect(() => {
@@ -73,7 +76,7 @@ const App = () => {
       <Route path="/authentication" exact>
         <Authentication />
       </Route>
-      <Redirect to="/" />
+      <Redirect to="/authentication" />
     </Switch>
   );
 

@@ -16,6 +16,7 @@ const Checkbox = ({ onChange, checked, name, disabled, label, className }) => {
       <StyledCheckboxToggle
         role="checkbox"
         tabIndex={disabled ? -1 : 0}
+        aria-checked={checked}
         disabled={disabled}
         onClick={handleCheckboxClick}
         onKeyDown={handleCheckboxClick}

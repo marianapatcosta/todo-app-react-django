@@ -48,13 +48,11 @@ const Authentication = () => {
 
   const validateForm = () => {
     !username.isValid &&
-      username.isTouched &&
       setInputErrors((prevErrors) => ({
         ...prevErrors,
         username: errorMessages.USERNAME,
       }));
     !password.isValid &&
-      !password.isTouched &&
       setInputErrors((prevErrors) => ({
         ...prevErrors,
         password: errorMessages.PASSWORD(6),
@@ -159,8 +157,7 @@ const Authentication = () => {
           message={errorMessage}
         />
       )}
-      {isLoading && <LoadingSpinner />}
-      <StyledAuthentication>
+      <StyledAuthentication isLoading={isLoading}>
         {toastData.message && <Toast {...toastData} onClean={setToastData} />}
         <StyledFormTitle className="page__card-title">
           {showLogin ? "Login" : "Create Account"}

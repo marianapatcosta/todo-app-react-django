@@ -26,7 +26,7 @@ const Header = ({ title, isDarkTheme, toggleThemeMode }) => {
             onChange={toggleThemeMode}
           />
           {isLoggedIn && (
-            <StyledLogout onClick={logout} role="button" tabIndex="0">
+            <StyledLogout onClick={logout} onKeyDown={logout} role="button" tabIndex="0">
               Logout
             </StyledLogout>
           )}

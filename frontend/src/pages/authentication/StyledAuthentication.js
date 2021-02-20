@@ -6,6 +6,15 @@ export const StyledAuthentication = styled(Card)`
   width: 80;
   position: relative;
 
+  ${({ isLoading }) =>
+    isLoading
+      ? `
+      filter: blur(0.1rem);
+      pointer-events: none; 
+      user-select: none;
+      `
+      : ""}
+
   @media (min-width: 768px) {
     width: 60%;
   }

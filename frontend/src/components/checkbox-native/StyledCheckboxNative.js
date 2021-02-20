@@ -40,10 +40,10 @@ export const StyledCheckboxToggle = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
 
   // if StyledCheckboxToggle is parent of StyledCheckboxInput
-  :focus-within {
+/*   :focus-within {
     outline: 0.125rem solid ${({ theme }) => theme.colors.highlight};
   }
-
+ */
   :hover {
     cursor: pointer;
     opacity: 0.5;
@@ -72,7 +72,7 @@ export const StyledCheckboxToggle = styled.div`
 export const StyledCheckboxInput = styled.input`
   position: absolute;
   opacity: 0;
-  z-index: 1;
+  z-index: -1;
 
   // when focus, adds a border to its sibling StyledCheckboxToggle
   :focus + ${StyledCheckboxToggle} {
