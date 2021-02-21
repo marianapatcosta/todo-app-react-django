@@ -1,6 +1,6 @@
 import React, { Fragment, useContext, useState } from "react";
 import axios from "axios";
-import { Button, Input, LoadingSpinner, Modal, Toast } from "../../components";
+import { Button, Input, Modal, Toast } from "../../components";
 import { errorMessages, initialInputState, toastTypes } from "../../constants";
 import { Hide, Show } from "../../assets/icons";
 import { encryptPassword } from "../../utils/utils";
