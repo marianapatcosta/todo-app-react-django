@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Tab } from "../index";
 import {
   StyledTabs,
@@ -19,11 +19,10 @@ const Tabs = ({
     +localStorage.getItem("activeTab") || 0
   );
 
-  useEffect(() => {
-    localStorage.setItem("activeTab", activeTabIndex);
-  }, [activeTabIndex]);
-
-  const onClickTab = (tabIndex) => setActiveTabIndex(tabIndex);
+  const onClickTab = (tabIndex) => {
+    setActiveTabIndex(tabIndex);
+    localStorage.setItem("activeTab", tabIndex);
+  };
 
   return (
     <StyledTabs className={className} {...otherProps}>
@@ -43,7 +42,7 @@ const Tabs = ({
           ))}
         </StyledTabsList>
       </StyledTabsListWrapper>
-      {tabsMetadata.map(({ label, renderContent }, index) => (
+      {/*    {tabsMetadata.map(({ label, renderContent }, index) => (
         <StyledTabsContent
           key={`tab-panel-${index + Math.random()}`}
           role="tabpanel"
@@ -54,14 +53,14 @@ const Tabs = ({
           <StyledTabsSpacer />
           {renderContent()}
         </StyledTabsContent>
-      ))}
-      {/*    <StyledTabsContent
+      ))}*/}
+      <StyledTabsContent
         role="tabpanel"
         aria-labelledby={tabsMetadata[activeTabIndex].label}
       >
         <StyledTabsSpacer />
         {tabsMetadata[activeTabIndex].renderContent()}
-      </StyledTabsContent> */}
+      </StyledTabsContent>
     </StyledTabs>
   );
 };

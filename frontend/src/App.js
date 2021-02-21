@@ -40,7 +40,7 @@ const App = () => {
       setIsLoggingOut(true);
       setAuthToken(null);
       setUserId(null);
-      localStorage.removeItem("userData");
+      localStorage.clear();
     }
   }, []);
 
