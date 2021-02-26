@@ -18,7 +18,6 @@ export const StyledInput = styled.input`
   box-shadow: 0 0.063rem 0.25rem ${({ theme }) => theme.colors.shadow};
   box-sizing: border-box;
   padding: 0.3rem 0.625rem;
-  position: relative;
   height: 2rem;
 
   :focus {

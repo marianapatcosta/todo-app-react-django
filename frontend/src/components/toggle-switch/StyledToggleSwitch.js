@@ -9,6 +9,9 @@ export const StyledToggleSwitch = styled.label`
   font-size: 95%;
   color: ${({ theme }) => theme.colors.highlight};
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   ${({ label }) =>
     !!label
