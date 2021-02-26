@@ -31,7 +31,7 @@ DEBUG = env('DEBUG') != 'False'
 
 SECRET_KEY = env('SECRET_KEY')
 
-ALLOWED_HOSTS = [] 
+ALLOWED_HOSTS = [ 'http://localhost:3000', 'https://todorganizer.web.app'] 
 
 
 # Application definition
@@ -139,7 +139,7 @@ STATIC_URL = '/static/'
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
-    'https://todorganizer.web.app/'
+    'https://todorganizer.web.app'
 )
 
 django_heroku.settings(locals())
