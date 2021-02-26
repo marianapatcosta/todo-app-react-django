@@ -46,6 +46,7 @@ const TodosBoard = () => {
         `${process.env.REACT_APP_BACKEND_URL}/api/todos`,
         {
           headers: {
+            'Access-Control-Allow-Origin': '*',
             Authorization: `Token ${authToken}`,
           },
         }
