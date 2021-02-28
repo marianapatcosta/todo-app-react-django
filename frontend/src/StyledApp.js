@@ -1,9 +1,12 @@
 import styled, { createGlobalStyle } from "styled-components";
 
 export const StyledApp = styled.div`
-  width: 100%;
   height: 100%;
-  max-width :100%;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
 export const StyledAppSpacer = styled.div`
