@@ -35,7 +35,8 @@
     "electron-build": "npm run react-build && electron-builder -mwl",
     "electron-build-win": "npm run react-build && electron-builder --win",
     "electron-build-mac": "npm run react-build && electron-builder --mac",
-    "electron-build-linux": "npm run react-build && electron-builder --linux"
+    "electron-build-linux": "npm run react-build && electron-builder --linux",
+    "postinstall": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -98,5 +99,9 @@
         ]
       }
     ]
+  },
+  "engines": {
+    "node": "14.15.5",
+    "npm": "6.14.11"
   }
 }
