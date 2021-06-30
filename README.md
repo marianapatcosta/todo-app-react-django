@@ -1,6 +1,9 @@
 # todo-app-react-django
 Simple ToDo desktop app developed using Electron, React and Django Rest Framework. Allows to create, retrieve, update and delete ToDos, upload .csv and export data and manage todos' state in a ToDo board. JavaScript; Electron framework to build stand-alone desktop app. React atomic design, CSS-in-JS with Styled Components; adaptative web design using mobile first approach; Python, Django Rest Framework
 
+![todorganizeroverview](https://user-images.githubusercontent.com/43031902/124004187-aedb5700-d9cf-11eb-93e4-8caba64c649d.png)
+
+
 # Local web app
 ## To run react app, in "Frontend" directory:
 ### Run "npm i" ou "yarn install" to install the required dependencies
